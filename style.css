@@ -1,0 +1,67 @@
+/* Basic styling for the calculator */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.calculator {
+    width: 280px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.display {
+    width: 100%;
+    padding: 10px;
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Colors for the buttons */
+#btn-1 { background-color: #ffadad; }
+#btn-2 { background-color: #ffd6a5; }
+#btn-3 { background-color: #fdffb6; }
+#btn-4 { background-color: #caffbf; }
+#btn-5 { background-color: #9bf6ff; }
+#btn-6 { background-color: #a0c4ff; }
+#btn-7 { background-color: #bdb2ff; }
+#btn-8 { background-color: #ffc3a0; }
+#btn-9 { background-color: #ff677d; }
+#btn-0 { background-color: #d4a5a5; }
+#btn-plus { background-color: #ffb3b3; }
+#btn-minus { background-color: #ffb8b8; }
+#btn-multiply { background-color: #c4e7d2; }
+#btn-divide { background-color: #f5e6b8; }
+#btn-equals { background-color: #96d38c; }
+#btn-clear { background-color: #ffbaba; }
+#btn-dot { background-color: #b9fbc0; }
+
+.button:hover {
+    background-color: #ddd;
+}
