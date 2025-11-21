@@ -1,31 +1,54 @@
-// Get references to the display and buttons
-const display = document.getElementById("display");
-const buttons = document.querySelectorAll(".button");
+let display = document.getElementById("display");
+let input = "";
 
-// Variable to hold the current input value
-let currentInput = "";
+// Factorial function
+function factorial(n) {
+    if (n < 0) return NaN;
+    if (n === 0 || n === 1) return 1;
+    let result = 1;
+    for (let i = 2; i <= n; i++) result *= i;
+    return result;
+}
 
-// Add event listeners for each button
-buttons.forEach(button => {
-    button.addEventListener("click", (e) => {
-        const value = e.target.innerText;
+document.querySelectorAll(".btn").forEach(button => {
+    button.addEventListener("click", () => {
 
-        if (value === "=") {
-            // If '=' button is clicked, evaluate the expression
-            try {
-                display.value = eval(currentInput);
-                currentInput = display.value;
-            } catch (error) {
-                display.value = "Error";
+        let value = button.innerText;
+
+        // Scientific functions
+        if (value === "sin") input += "Math.sin(";
+        else if (value === "cos") input += "Math.cos(";
+        else if (value === "tan") input += "Math.tan(";
+        else if (value === "log") input += "Math.log10(";
+        else if (value === "ln") input += "Math.log(";
+        else if (value === "√") input += "Math.sqrt(";
+        else if (value === "π") input += "Math.PI";
+        else if (value === "e") input += "Math.E";
+        else if (value === "x^y") input += "**";
+        else if (value === "n!") input += "!";
+        else if (value === "=") {
+
+            // Replace factorial symbol "!" manually
+            if (input.includes("!")) {
+                input = input.replace(/(\d+)!/g, (match, num) => factorial(parseInt(num)));
             }
-        } else if (value === "C") {
-            // If 'C' button is clicked, clear the display
-            currentInput = "";
-            display.value = "";
-        } else {
-            // Add the clicked value to the input
-            currentInput += value;
-            display.value = currentInput;
+
+            try {
+                display.value = eval(input);
+                input = display.value;
+            } catch (e) {
+                display.value = "Error";
+                input = "";
+            }
         }
+        else if (value === "C") {
+            input = "";
+            display.value = "";
+        }
+        else {
+            input += value;
+        }
+
+        display.value = input;
     });
 });
