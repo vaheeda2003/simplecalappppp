@@ -1,67 +1,93 @@
-/* Basic styling for the calculator */
 body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f9;
+    background: #eeeeee;
+    font-family: Arial, sans-serif;
 }
 
 .calculator {
-    width: 280px;
-    background-color: #fff;
+    background: #ffffff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 330px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
 }
 
-.display {
+#display {
     width: 100%;
-    padding: 10px;
-    font-size: 24px;
+    height: 65px;
+    font-size: 28px;
     text-align: right;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #bfbfbf;
+    background: #f7f7f7;
 }
 
 .buttons {
+    margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 12px;
 }
 
-.button {
-    padding: 20px;
+/* GENERAL BUTTON STYLE */
+.btn {
+    padding: 18px;
     font-size: 18px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: 0.25s;
 }
 
-/* Colors for the buttons */
-#btn-1 { background-color: #ffadad; }
-#btn-2 { background-color: #ffd6a5; }
-#btn-3 { background-color: #fdffb6; }
-#btn-4 { background-color: #caffbf; }
-#btn-5 { background-color: #9bf6ff; }
-#btn-6 { background-color: #a0c4ff; }
-#btn-7 { background-color: #bdb2ff; }
-#btn-8 { background-color: #ffc3a0; }
-#btn-9 { background-color: #ff677d; }
-#btn-0 { background-color: #d4a5a5; }
-#btn-plus { background-color: #ffb3b3; }
-#btn-minus { background-color: #ffb8b8; }
-#btn-multiply { background-color: #c4e7d2; }
-#btn-divide { background-color: #f5e6b8; }
-#btn-equals { background-color: #96d38c; }
-#btn-clear { background-color: #ffbaba; }
-#btn-dot { background-color: #b9fbc0; }
+/* Row-specific colors */
+#sin { background: #ffadad; }
+#cos { background: #ffd6a5; }
+#tan { background: #fdffb6; }
+#sqrt { background: #caffbf; }
 
-.button:hover {
-    background-color: #ddd;
+#log { background: #9bf6ff; }
+#ln { background: #a0c4ff; }
+#pow { background: #bdb2ff; }
+#fact { background: #ffc6ff; }
+
+#pi { background: #ff8fab; }
+#e { background: #ffafcc; }
+#left { background: #f3d1f4; }
+#right { background: #f7c59f; }
+
+#b7 { background: #ffb5a7; }
+#b8 { background: #fcd5ce; }
+#b9 { background: #f8edeb; }
+#divide { background: #bde0fe; }
+
+#b4 { background: #caffbf; }
+#b5 { background: #d8ffd0; }
+#b6 { background: #aff7e6; }
+#multiply { background: #98f5e1; }
+
+#b1 { background: #ffd6e0; }
+#b2 { background: #ffe5ec; }
+#b3 { background: #f6e6cb; }
+#minus { background: #feeafa; }
+
+#b0 { background: #c1fba4; }
+#dot { background: #d4a5a5; }
+#plus { background: #ffb5a7; }
+#equal { background: #8ef6e4; }
+
+/* Clear button full width */
+.clear {
+    grid-column: span 4;
+    background: #ff6b6b;
+    color: white;
+    font-weight: bold;
+}
+
+.btn:hover {
+    filter: brightness(0.9);
 }
